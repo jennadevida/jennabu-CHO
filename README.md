@@ -1,5 +1,5 @@
-# abundances_C-O
-This code simulates the abundance of molecules in a hot atmosphere, dominated by hydrogen.  This code creates graphics similar to those presented in the paper "Carbon dioxide in exoplanetary atmospheres: Rarely dominant compared to carbon monoxide and water in hot atmospheres dominated by hydrogen" by Kevin Heng et al.
+# jennabu_abundances_C-O
+This code simulate the abundance of molecules in a hot atmosphere, dominated by hydrogen.  This code creates graphics similar to those presented in the paper "Carbon dioxide in exoplanetary atmospheres: Rarely dominant compared to carbon monoxide and water in hot atmospheres dominated by hydrogen" by Kevin Heng et al.
 
 This code uses Python3, you could change the prints if you want to use it with Python2.7.
 
