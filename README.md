@@ -3,13 +3,13 @@ This code simulates the abundance of molecules in a hot atmosphere, dominated by
 
 This code uses Python3, you could change the prints if you want to use it with Python2.7.
 
-What you can do?:
+# What you can do?:
 
  [1] Generate a graphic (.png) of abundances on a range of temperatures for a specific C/O and pressure.
  
- [2] Obtain the specific abundances of molecules on a specific temperature, C/O and pressure (file .dat).
+ [2] Obtain the specific abundances of molecules on a specific temperature, C/O and pressure (.dat).
  
-The reactions that the code consider are:
+# The reactions that the code consider are:
 
   Reaction 1: CH4 + H2O <-> CO + 3 H2
   
