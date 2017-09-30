@@ -3,7 +3,7 @@ This code simulates the abundance of molecules in a hot atmosphere, dominated by
 
 This code use Python3, you could change the prints if you want to use it with Python2.7.
 
-What you can do?:
+What you can do?:\n
  [1] Generate a graphic (.png) of abundances on a range of temperatures for a specific C/O and pressure.
  [2] Obtain the specific abundances of molecules on a specific temperature, C/O and pressure (file .dat).
  
