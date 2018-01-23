@@ -100,7 +100,6 @@ def molecule_H_S(Hf_29815_molecule, s_29815_molecule,A,B,C,D,E,F,G,H,t):
     h_molecule = dH_molecule + Hf_29815_molecule
     s_molecule = s(A, B, C, D, E, G,t)
     ds_molecule = s_molecule - s_29815_molecule
-
     return dH_molecule, h_molecule, s_molecule, ds_molecule
 
 def insert_one_temp(temperature, P_wanted):
