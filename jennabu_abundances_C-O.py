@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 import numpy as np
 import numpy.polynomial.polynomial as poly
 import matplotlib.pyplot as plt
@@ -756,7 +757,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('(kJ/mol)')
     plt.legend( loc='best')
-    plt.savefig("abundances-nist-1.png")
+    plt.savefig("abundances-nist-1.pdf")
     #plt.show()
 
     '''
@@ -778,7 +779,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('Equilibrium constant rxn1')
     plt.legend( loc='best')
-    plt.savefig('abundances-nist-1-K.png')
+    plt.savefig('abundances-nist-1-K.pdf')
     #plt.show()
 
     '''
@@ -804,7 +805,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('(kJ/mol)')
     plt.legend( loc='best')
-    plt.savefig("abundances-nist-2.png")
+    plt.savefig("abundances-nist-2.pdf")
     #plt.show()
 
     '''
@@ -826,7 +827,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('Equilibrium constant rxn2')
     plt.legend( loc='best')
-    plt.savefig('abundances-nist-2-K.png')
+    plt.savefig('abundances-nist-2-K.pdf')
     #plt.show()
 
     plt.figure()
@@ -836,7 +837,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('$1/K´_{2}$')
     plt.legend( loc='best')
-    plt.savefig('abundances-nist-fig1.png')
+    plt.savefig('abundances-nist-fig1.pdf')
     #plt.show()
 
     '''
@@ -862,7 +863,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('(kJ/mol)')
     plt.legend( loc='best')
-    plt.savefig("abundances-nist-3.png")
+    plt.savefig("abundances-nist-3.pdf")
     #plt.show()
 
     '''
@@ -884,7 +885,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('Equilibrium constant rxn3')
     plt.legend( loc='best')
-    plt.savefig('abundances-nist-3-K.png')
+    plt.savefig('abundances-nist-3-K.pdf')
     #plt.show()
 
     '''
@@ -908,7 +909,7 @@ def classic_calculation():
     plt.xlabel('Temperature (K)')
     plt.ylabel('Normalised Equilibrium Constants')
     plt.legend( loc='best')
-    plt.savefig('abundances-nist_P_'+P_wanted_str+'.png')
+    plt.savefig('abundances-nist_P_'+P_wanted_str+'.pdf')
     plt.show()
     '''
     return K1_1bar, K1_P_wanted, K2_sin_presion, K3_1bar, K3_P_wanted
@@ -1044,6 +1045,21 @@ def abundances_norm_H(CO_wanted, P_wanted_str, selection):
         file_abundance_CO2.write(str(n_CO2_P_wanted) + "|" + str(len(n_CO2_P_wanted)) + "| P = " + P_wanted_str)
 
         file_abundance_CO2.close()
+
+        file_abundances_1bar = open('abu_heng_1bar.dat','w')
+        file_abundances_P = open('abu_heng_Pwanted.dat','w')
+
+        file_abundances_1bar.write('# T(K)\tCH4\tC2H2\tH2O\tCO\tCO2\n')
+        file_abundances_P.write('# T(K)\tCH4\tC2H2\tH2O\tCO\tCO2\n')
+
+        for i in range(len(T)):
+            file_abundances_1bar.write(str(T[i])+'\t'+str(n_CH4_1bar[i])+'\t'+str(n_C2H2_1bar[i])+'\t'+str(n_H2O_1bar[i])+'\t'+str(n_CO_1bar[i])+'\t'+str(n_CO2_1bar[i])+'\n')
+        for i in range(len(T)):
+            file_abundances_P.write(str(T[i]) + '\t' + str(n_CH4_P_wanted[i]) + '\t' + str(n_C2H2_P_wanted[i]) + '\t' + str(
+                n_H2O_P_wanted[i]) + '\t' + str(n_CO_P_wanted[i]) + '\t' + str(n_CO2_P_wanted[i]) + '\n')
+
+        file_abundances_1bar.close()
+        file_abundances_P.close()
 
         return n_CH4_1bar, n_CH4_P_wanted, n_C2H2_1bar, n_C2H2_P_wanted, n_H2O_1bar, n_H2O_P_wanted, n_CO_1bar, n_CO_P_wanted, n_CO2_1bar, n_CO2_P_wanted
 
@@ -1184,7 +1200,7 @@ def graphics_CO(P, figN, CO_wanted):  # P = "1bar" o P_wanted_str o ""
     plt.ylabel('$ñ_{x}$')
     plt.title('C/O = ' + str(CO_wanted))
     plt.legend(loc=4, prop={'size': 7}, ncol=2)
-    plt.savefig('abundances-nist-' + str(figN) + '.png')
+    plt.savefig('abundances-nist-' + str(figN) + '.pdf')
     plt.show()
 
 # Now inputs
